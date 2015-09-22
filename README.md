@@ -1,3 +1,11 @@
+# Artifactory's Gradle plugin
+
+Keeping this fork alive for its code reviews performed at TomTom.
+
+----------------------------------------------------------------------------------------------------
+
+# Original documentation
+
 ## Overview
 
 Build Info is Artifactory's open integration layer for the CI servers and build tools.
