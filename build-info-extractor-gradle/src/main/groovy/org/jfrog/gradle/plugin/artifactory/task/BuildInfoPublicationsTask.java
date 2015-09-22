@@ -280,7 +280,7 @@ public class BuildInfoPublicationsTask extends BuildInfoBaseTask {
         }
         Map<QName, String> extraInfo = artifactInfo.getExtraInfo();
         if (extraInfo != null) {
-            for (Map.Entry<QName, String> extraToken : artifactInfo.getExtraInfo().entrySet()) {
+            for (Map.Entry<QName, String> extraToken : extraInfo.entrySet()) {
                 String key = extraToken.getKey().getLocalPart();
                 if (extraTokens.containsKey(key)) {
                     throw new GradleException("Duplicated extra info '" + key + "'.");
