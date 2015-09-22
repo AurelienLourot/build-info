@@ -278,12 +278,15 @@ public class BuildInfoPublicationsTask extends BuildInfoBaseTask {
         if (StringUtils.isNotBlank(artifactInfo.getClassifier())) {
             extraTokens.put("classifier", artifactInfo.getClassifier());
         }
-        for (Map.Entry<QName, String> extraToken : artifactInfo.getExtraInfo().entrySet()) {
-            String key = extraToken.getKey().getLocalPart();
-            if (extraTokens.containsKey(key)) {
-                throw new GradleException("Duplicated extra info '" + key + "'.");
+        Map<QName, String> extraInfo = artifactInfo.getExtraInfo();
+        if (extraInfo != null) {
+            for (Map.Entry<QName, String> extraToken : artifactInfo.getExtraInfo().entrySet()) {
+                String key = extraToken.getKey().getLocalPart();
+                if (extraTokens.containsKey(key)) {
+                    throw new GradleException("Duplicated extra info '" + key + "'.");
+                }
+                extraTokens.put(key, extraToken.getValue());
             }
-            extraTokens.put(key, extraToken.getValue());
         }
         return extraTokens;
     }
