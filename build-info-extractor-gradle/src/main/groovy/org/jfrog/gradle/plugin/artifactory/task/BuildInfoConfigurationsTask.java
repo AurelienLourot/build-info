@@ -198,7 +198,7 @@ public class BuildInfoConfigurationsTask extends BuildInfoBaseTask {
                         getProject().getVersion().toString(), null, "ivy", "xml"));
         artifactBuilder.targetRepository(clientConf.publisher.getRepoKey());
         PublishArtifactInfo artifactInfo =
-                new PublishArtifactInfo(ivyDescriptor.getName(), "xml", "ivy", null, null, ivyDescriptor);
+                new PublishArtifactInfo(ivyDescriptor.getName(), "xml", "ivy", null, ivyDescriptor);
         Map<String, String> propsToAdd = getPropsToAdd(artifactInfo, null);
         artifactBuilder.addProperties(propsToAdd);
         return new GradleDeployDetails(artifactInfo, artifactBuilder.build(), getProject());
@@ -221,7 +221,7 @@ public class BuildInfoConfigurationsTask extends BuildInfoBaseTask {
                 getProject().getVersion().toString(), null, "pom", "pom"));
         artifactBuilder.targetRepository(clientConf.publisher.getRepoKey());
         PublishArtifactInfo artifactInfo =
-                new PublishArtifactInfo(mavenDescriptor.getName(), "pom", "pom", null, null, mavenDescriptor);
+                new PublishArtifactInfo(mavenDescriptor.getName(), "pom", "pom", null, mavenDescriptor);
         Map<String, String> propsToAdd = getPropsToAdd(artifactInfo, null);
         artifactBuilder.addProperties(propsToAdd);
         return new GradleDeployDetails(artifactInfo, artifactBuilder.build(), getProject());

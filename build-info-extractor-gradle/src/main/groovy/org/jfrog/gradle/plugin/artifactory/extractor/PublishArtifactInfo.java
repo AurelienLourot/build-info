@@ -45,6 +45,10 @@ public class PublishArtifactInfo {
         this.file = artifact.getFile();
     }
 
+    public PublishArtifactInfo(String name, String extension, String type, String classifier, File file) {
+        this(name, extension, type, classifier, null, file);
+    }
+
     public PublishArtifactInfo(String name, String extension, String type, String classifier,
                                Map<QName, String> extraInfo, File file) {
         this.name = name;

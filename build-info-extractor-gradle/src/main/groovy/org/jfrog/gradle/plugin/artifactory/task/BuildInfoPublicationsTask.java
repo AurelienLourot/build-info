@@ -231,7 +231,7 @@ public class BuildInfoPublicationsTask extends BuildInfoBaseTask {
                 DeployDetails.Builder builder = createBuilder(processedFiles, file, publicationName);
                 if (builder != null) {
                     PublishArtifactInfo artifactInfo = new PublishArtifactInfo(
-                            projectIdentity.getArtifactId(), "pom", "pom", null, null, file);
+                            projectIdentity.getArtifactId(), "pom", "pom", null, file);
                     addMavenArtifactToDeployDetails(deployDetails, publicationName, projectIdentity, builder, artifactInfo);
                 }
             }
@@ -243,7 +243,7 @@ public class BuildInfoPublicationsTask extends BuildInfoBaseTask {
                 if (builder == null) continue;
                 PublishArtifactInfo artifactInfo = new PublishArtifactInfo(
                         projectIdentity.getArtifactId(), artifact.getExtension(),
-                        artifact.getExtension(), artifact.getClassifier(), null,
+                        artifact.getExtension(), artifact.getClassifier(),
                         file);
                 addMavenArtifactToDeployDetails(deployDetails, publicationName, projectIdentity, builder, artifactInfo);
             }
